@@ -54,18 +54,32 @@ sudo apt-get install tesseract-ocr
 - On Windows:
 Download and install from: https://github.com/UB-Mannheim/tesseract/wiki
 
-5. Run migrations:
+5. Set up environment variables:
+```bash
+# Copy the example environment file
+cp .env.example .env
+
+# Edit the .env file with your settings
+nano .env  # or use your preferred text editor
+```
+
+Required environment variables:
+- `DEBUG`: Set to 'True' for development, 'False' for production
+- `SECRET_KEY`: Your Django secret key
+- `ALLOWED_HOSTS`: Comma-separated list of allowed hosts
+
+6. Run migrations:
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-6. Start the development server:
+7. Start the development server:
 ```bash
 python manage.py runserver
 ```
 
-7. Visit http://localhost:8000 in your web browser
+8. Visit http://localhost:8000 in your web browser
 
 ## Usage
 
@@ -79,6 +93,8 @@ python manage.py runserver
 - The application works best with clear, high-quality passport images
 - Black and white or grayscale images are recommended for better OCR results
 - The OCR accuracy may vary depending on the image quality and format
+- Never commit your .env file to version control
+- Always keep your SECRET_KEY secure and different between environments
 
 ## License
 
