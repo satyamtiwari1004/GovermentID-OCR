@@ -1,0 +1,22 @@
+# Media files
+media/
+media/passports/
+
+# Database
+db.sqlite3
+
+# Environment files
+.env
+venv/
+__pycache__/
+*.pyc
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS specific files
+.DS_Store
+Thumbs.db 
